@@ -6,10 +6,8 @@ class PasswordResetsController < ApplicationController
 
   def create
     @user = User.find_by(email: params[:email])
-    if @user.present?
-      PasswordMailer.with(user: @user).reset.deliver_later
-    end
-    redirect_to root_path, notice: "The password reset email has been sent"
+    PasswordMailer.with(user: @user).reset.deliver_later if @user.present?
+    redirect_to root_path, notice: 'The password reset email has been sent'
   end
 
   def edit

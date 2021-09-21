@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Assigns token with purpose and expiry time and sends email
 class PasswordMailer < ApplicationMailer
   def reset
