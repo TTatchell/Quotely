@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Controls the user log in process
 class SessionsController < ApplicationController
   def new; end
 
