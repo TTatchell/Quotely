@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Logic behind creating a new user
 class RegistrationsController < ApplicationController
   def new
     @user = User.new
