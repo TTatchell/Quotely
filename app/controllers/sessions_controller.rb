@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SessionController < ApplicationController
   def new; end
 
@@ -14,6 +16,6 @@ class SessionController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_path, notice: "Logged Out"
+    redirect_to root_path, notice: 'Logged Out'
   end
 end
