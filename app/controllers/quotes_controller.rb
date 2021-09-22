@@ -19,12 +19,13 @@ class QuotesController < ApplicationController
 
   def edit; end
 
-  def index; end
+  def index
+    @quotes = Quotes.all.select { |quote| quote.published == true }
+  end
 
   private
 
   def quote_params
     params.require(:quote).permit(:content, :author, :user)
-
   end
 end
