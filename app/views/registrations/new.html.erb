@@ -1,10 +1,9 @@
 <h1>Sign Up To Quotely</h1>
 <% if @user.errors.any? %>
   <% @user.errors.full_messages.each do |message| %>
-    <h3><%= message %></h3>
+    <h3><%= message %></h3><br>
   <% end %>
 <% end %>
-<br>
 <%= form_with model: @user, url: sign_up_path do |f| %>
   <p>
     <%= f.label "First Name" %><br>
