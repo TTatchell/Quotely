@@ -25,8 +25,8 @@ class QuotesController < ApplicationController
   def update
     @quote = Quote.find(params[:id])
     if @quote.update(quote_params)
-      redirect_to root_path, notice: "Quote updated!"
-    else 
+      redirect_to root_path, notice: 'Quote updated!'
+    else
       render :edit
     end
   end
