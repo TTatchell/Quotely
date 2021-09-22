@@ -10,6 +10,7 @@ class QuotesController < ApplicationController
   def create
     @quote = Quote.new(quote_params)
     @quote.user_id = session[:user_id]
+    @quote.published = true
     if @quote.save
       redirect_to root_path, notice: 'Posted Quote!'
     else
@@ -17,15 +18,25 @@ class QuotesController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @quote = Quote.find(params[:id])
+  end
+
+  def update
+    @quote = Quote.find(params[:id])
+  end
 
   def index
-    @quotes = Quotes.all.select { |quote| quote.published == true }
+    @quotes = Quote.all.select { |quote| quote.published == true }
+  end
+
+  def show
+    @quote = Quote.find(params[:id])
   end
 
   private
 
   def quote_params
-    params.require(:quote).permit(:content, :author, :user)
+    params.require(:quote).permit(:id, :content, :author, :user)
   end
 end

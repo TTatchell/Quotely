@@ -1,9 +1,7 @@
 <% @quotes.each do |quote| %>
   <div>
-    <h3><%= quote.author %></h3>
-    <br>
-    <h3><%= quote.content %></h3>
-    <br>
-    <p>Posted by: <%= quote.user %></p>
+    <h4><%= quote.author %>:</h4>
+    <h4><i><%= quote.content %></i></h4>
+    <p>Posted by: <%= quote.user.first_name %></p>
   </div>
 <% end %>
