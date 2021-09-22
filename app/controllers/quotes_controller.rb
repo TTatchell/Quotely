@@ -24,6 +24,11 @@ class QuotesController < ApplicationController
 
   def update
     @quote = Quote.find(params[:id])
+    if @quote.update(quote_params)
+      redirect_to root_path, notice: "Quote updated!"
+    else 
+      render :edit
+    end
   end
 
   def index
@@ -37,6 +42,6 @@ class QuotesController < ApplicationController
   private
 
   def quote_params
-    params.require(:quote).permit(:id, :content, :author, :user)
+    params.require(:quote).permit(:id, :content, :author, :user, :published)
   end
 end
