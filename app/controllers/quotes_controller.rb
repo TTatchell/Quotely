@@ -8,10 +8,23 @@ class QuotesController < ApplicationController
   end
 
   def create
-    @quote = Quote.new
+    @quote = Quote.new(quote_params)
+    @quote.user_id = session[:user_id]
+    if @quote.save
+      redirect_to root_path, notice: 'Posted Quote!'
+    else
+      render :new
+    end
   end
 
   def edit; end
 
   def index; end
+
+  private
+
+  def quote_params
+    params.require(:quote).permit(:content, :author, :user)
+
+  end
 end

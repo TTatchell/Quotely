@@ -1,7 +1,8 @@
 <h2>New Quote</h2>
 <% if @quote.errors.any? %>
   <% @quote.errors.full_messages.each do |message| %>
-    <h3><%= message %></h3><br>
+    <h3><%= message %></h3>
+    <br>
   <% end %>
 <% end %>
 <%= form_with model: @quote do |f| %>

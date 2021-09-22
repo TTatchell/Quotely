@@ -3,5 +3,6 @@
 class Quote < ApplicationRecord
   belongs_to :user
 
-  validates :quote_content, presence: true, length: { maximum: 280 }
+  validates :content, presence: true, length: { maximum: 280 }
+  validates :author, presence: true
 end
