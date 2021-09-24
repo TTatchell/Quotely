@@ -41,6 +41,10 @@ class QuotesController < ApplicationController
     @quote = Quote.find(params[:id])
   end
 
+  def user_feed
+    @quotes = Quote.all.select { |quote| quote.user_id == session[:user_id] }
+  end
+
   private
 
   def quote_params

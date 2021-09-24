@@ -1,0 +1,11 @@
+<h1><%= Current.user.first_name %>'s Quotes</h1>
+<% @quotes.each do |quote| %>
+  <div>
+    <h4><%= quote.author %>:</h4>
+    <h4><i><%= quote.content %></i></h4>
+    <p>Posted by: <%= quote.user.first_name %></p>
+    <% if Current.user == quote.user %>
+      <%= link_to "Edit your quote", edit_quote_path(quote) %>
+    <% end %>
+  </div>
+<% end %>
