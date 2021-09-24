@@ -8,3 +8,8 @@
 <% else %>
   <%= button_to 'Like', quote_likes_path(@quote), method: :post %>
 <% end %>
+<br>
+<% if Current.user == @quote.user %>
+  <%= link_to "Edit", edit_quote_path(@quote) %>
+  <%= link_to 'Delete', quote_path(@quote), method: :delete, data: { confirm: 'Are you sure? This can\'t be undone!' } %>
+<% end %>

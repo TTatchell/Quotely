@@ -47,6 +47,11 @@ class QuotesController < ApplicationController
     @quotes = Quote.all.select { |quote| quote.user_id == session[:user_id] }
   end
 
+  def destroy
+    @quote = Quote.find(params[:id]).destroy
+    redirect_to root_path, notice: 'Quote Deleted!'
+  end
+
   private
 
   def quote_params
