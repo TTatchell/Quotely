@@ -1,9 +1,10 @@
 <% if Current.user %>
 <h1>Welcome <%= Current.user.first_name %>, To Quotely</h1>
   Logged in as: <%= Current.user.email %><br>
-  <%= link_to 'Edit Password', edit_password_path %>
-  <%= link_to 'Post Quote', :new_quote%>
-  <%= link_to 'Feed', :quotes %>
+  <%= link_to 'Edit Password', edit_password_path %><br>
+  <%= link_to 'Post Quote', :new_quote%><br>
+  <%= link_to 'Feed', :quotes %><br>
+  <%= link_to 'Your Feed', :user_feed %>
   <%= button_to 'Logout', logout_path, method: :delete %>
 <% else %>
 <h1>Welcome To Quotely</h1>
