@@ -2,6 +2,9 @@
 
 Rails.application.routes.draw do
   resources :quotes
+  resources :quotes do
+    resources :likes
+  end
   get 'user_feed', to: 'quotes#user_feed'
   root 'welcome#index'
   get 'sign_up', to: 'registrations#new'

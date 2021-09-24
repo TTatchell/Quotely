@@ -1,2 +1,10 @@
 <h1>Here's Ya Quote</h1>
 <%= @quote.author%>
+<%= @quote.content%>
+<p><%= @quote.likes.count %> <%= (@quote.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+<% pre_like = @quote.likes.find { |like| like.user_id == Current.user.id} %>
+<% if pre_like %>
+  <%= button_to 'Unlike', quote_like_path(@quote, pre_like), method: :delete %>
+<% else %>
+  <%= button_to 'Like', quote_likes_path(@quote), method: :post %>
+<% end %>
