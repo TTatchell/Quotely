@@ -5,6 +5,7 @@ class QuotesController < ApplicationController
   before_action :require_user_logged_in!
   def new
     @quote = Quote.new
+    @maximum_length = Quote.validators_on(:content).first.options[:maximum]
   end
 
   def create
@@ -20,6 +21,7 @@ class QuotesController < ApplicationController
 
   def edit
     @quote = Quote.find(params[:id])
+    @maximum_length = Quote.validators_on(:content).first.options[:maximum]
   end
 
   def update
