@@ -24,6 +24,8 @@ class QuotesController < ApplicationController
 
   def update
     @quote = Quote.find(params[:id])
+    redirect_to root_path, notice: 'You Do Not Own This Quote!' and return unless does_user_own_this?(@quote)
+
     if @quote.update(quote_params)
       redirect_to root_path, notice: 'Quote updated!'
     else
@@ -43,5 +45,9 @@ class QuotesController < ApplicationController
 
   def quote_params
     params.require(:quote).permit(:id, :content, :author, :user, :published)
+  end
+
+  def does_user_own_this?(quote)
+    quote.user_id == session[:user_id]
   end
 end
