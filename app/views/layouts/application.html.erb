@@ -11,6 +11,7 @@
   <body>
     <% if Current.user %>
       <div id='navBar'>
+        <%= link_to 'Home', :root, form: {style: 'display:inline-block;'}%>
         <%= link_to 'Post A Quote', :new_quote, form: {style: 'display:inline-block;'}%>
         <%= link_to 'Feed', :quotes, form: {style: 'display:inline-block;'} %>
         <%= link_to 'Your Quotes', :user_feed, form: {style: 'display:inline-block;'} %>

@@ -1,8 +1,5 @@
 <% if Current.user %>
-  <h1>Welcome <%= Current.user.first_name %>, To Quotely</h1>
+  <%= render 'logged_in'%>
 <% else %>
-  <h1>Welcome To Quotely</h1>
-  <%= link_to 'Sign Up', sign_up_path %>
-  or
-  <%= link_to 'Login', sign_in_path %>
+  <%= render 'sign_in'%>
 <% end %>
