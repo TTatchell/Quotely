@@ -1,18 +1,1 @@
-<% @quotes.each do |quote| %>
-  <div>
-    <%= link_to quote_path(quote) do %>
-      <h4><%= quote.author %> once said:</h4>
-      <h4><i><%= quote.content %></i></h4>
-    <% end %>
-    <%= link_to quote_likes_path(quote) do%>
-      <p><%= quote.likes.count %> <%= (quote.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-    <% end %>
-    <% pre_like = quote.likes.find { |like| like.user_id == Current.user.id} %>
-    <% if pre_like %>
-      <%= button_to 'Unlike', quote_like_path(quote, pre_like), method: :delete %>
-    <% else %>
-      <%= button_to 'Like', quote_likes_path(quote), method: :post %>
-    <% end %>
-    <p>Posted by: <%= link_to quote.user.first_name, user_path(quote.user.id) %></p>
-  </div>
-<% end %>
+<%= render 'quote'%>

@@ -1,10 +1,2 @@
 <h1><%= Current.user.first_name %>'s Quotes</h1>
-<% @quotes.each do |quote| %>
-  <div>
-    <%= link_to quote_path(quote) do %>
-      <h4><%= quote.author %> once said:</h4>
-      <h4><i><%= quote.content %></i></h4>
-    <% end %>
-    <p>Posted by: <%= link_to quote.user.first_name, user_path(quote.user.id) %></p>
-  </div>
-<% end %>
+<%= render 'quote'%>

@@ -1,17 +1,2 @@
 <h2>New Quote</h2>
-<% if @quote.errors.any? %>
-  <% @quote.errors.full_messages.each do |message| %>
-    <h3><%= message %></h3>
-    <br>
-  <% end %>
-<% end %>
-<%= form_with model: @quote do |f| %>
-  <%= f.label :author %><br>
-  <%= f.text_field :author %><br>
-  <%= f.label :content %><br>
-  <%= f.text_area :content , maxlength: :@char_limit %><br>
-  Character limit:<%= @maximum_length %>  
-  <br>
-  <%= f.submit %>
-<% end %>
-
+<%= render 'form' %>

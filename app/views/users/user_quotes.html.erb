@@ -1,3 +1,2 @@
-<% @quotes.each do |q|%>
-  <h3><%= link_to q.author, quote_path(q)%></h3>
-<% end %>
+<h1><%= @user.first_name%>'s Quotes</h1>
+<%= render 'quotes/quote'%>
