@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :quotes do
     resources :likes
   end
+  resources :users, only: :show
   get 'user_feed', to: 'quotes#user_feed'
   root 'welcome#index'
   get 'sign_up', to: 'registrations#new'
