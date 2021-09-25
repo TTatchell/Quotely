@@ -13,6 +13,6 @@ class UsersController < ApplicationController
 
   def user_likes
     @user = User.find(params[:id])
-    @likes = @user.likes
+    @quotes = @user.likes.collect(&:quote)
   end
 end

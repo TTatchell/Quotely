@@ -1,6 +1,5 @@
-<h1>Here's Ya Quote</h1>
-<%= @quote.author%>
-<%= @quote.content%>
+<h2><%= @quote.author%></h2>
+<h2><%= @quote.content%></h2>
 <p><%= @quote.likes.count %> <%= (@quote.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 <% pre_like = @quote.likes.find { |like| like.user_id == Current.user.id} %>
 <% if pre_like %>
