@@ -5,10 +5,8 @@ Rails.application.routes.draw do
   resources :quotes do
     resources :likes
   end
-  resources :users do
-    resources :quotes, only: [:index]
-  end
   get 'users/:id/user_quotes' => 'users#user_quotes', :as => :custom_user_quotes
+  get 'users/:id/user_likes' => 'users#user_likes', :as => :custom_user_likes
 
   resources :users, only: :show
   get 'user_feed', to: 'quotes#user_feed'

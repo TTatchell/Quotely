@@ -10,4 +10,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @quotes = @user.quotes
   end
+
+  def user_likes
+    @user = User.find(params[:id])
+    @likes = @user.likes
+  end
 end

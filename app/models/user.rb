@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
+# Model for user
 class User < ApplicationRecord
   has_many :likes, dependent: :destroy
-  has_many :quotes
+  has_many :quotes, dependent: :destroy
   has_secure_password
   validates :email, presence: true, uniqueness: true, format: { with: /\A[^@\s]+@[^@\s]+\z/, message: 'Invalid email' }
   validates :first_name, presence: true
