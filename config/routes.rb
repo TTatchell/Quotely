@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :quotes
+  # resources :quotes THIS CAN GO IF THE BELOW LINE WORKS
   resources :quotes do
     resources :likes
   end

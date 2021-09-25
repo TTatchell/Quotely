@@ -29,6 +29,10 @@ class LikesController < ApplicationController
     @like = @quote.likes.find(params[:id])
   end
 
+  def index
+    @users = Like.all.select { |like| like.quote_id.to_s == params[:quote_id] }.collect(&:user)
+  end
+
   private
 
   def find_quote

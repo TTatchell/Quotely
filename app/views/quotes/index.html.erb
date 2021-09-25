@@ -3,6 +3,8 @@
     <%= link_to quote_path(quote) do %>
       <h4><%= quote.author %> once said:</h4>
       <h4><i><%= quote.content %></i></h4>
+    <% end %>
+    <%= link_to quote_likes_path(quote) do%>
       <p><%= quote.likes.count %> <%= (quote.likes.count) == 1 ? 'Like' : 'Likes'%></p>
     <% end %>
     <% pre_like = quote.likes.find { |like| like.user_id == Current.user.id} %>
