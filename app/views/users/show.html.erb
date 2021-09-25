@@ -4,4 +4,7 @@
 <h4>Number of Quotes: <%= @user.quotes.count %></h4>
 <h4>Number of Likes: <%= @user.likes.count %></h4>
 <%= link_to "#{@user.first_name}'s Quotes", custom_user_quotes_url %><br>
-<%= link_to "#{@user.first_name}'s Liked Quotes", custom_user_likes_url%>
+<%= link_to "#{@user.first_name}'s Liked Quotes", custom_user_likes_url%><br>
+<% if Current.user == @user %>
+  <%= link_to 'Edit Password', :edit_password %>
+<% end%>
