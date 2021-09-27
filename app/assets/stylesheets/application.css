@@ -15,7 +15,7 @@
  */
 
 #app_wrap {
-    width: 800px;
+    max-width: 800px;
     margin: 0 auto;
     text-align: center;
 }
@@ -29,7 +29,7 @@ body {
 }
 
 .button {
-    margin: 10px;
+    margin: 10px auto;
     padding: 15px 45px;
     text-align: center;
     text-transform: uppercase;
@@ -39,6 +39,7 @@ body {
     box-shadow: 0 0 20px #eee;
     border-radius: 10px;
     display: block;
+    border: none;
 }
 
 .button:hover {
@@ -47,3 +48,9 @@ body {
     color: #fff;
     text-decoration: none;
 }
+
+@media only screen and (max-width:480px) { 
+    .button {
+      width: 80%;
+    }
+  }

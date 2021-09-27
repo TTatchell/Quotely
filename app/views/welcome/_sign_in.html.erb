@@ -1,5 +1,6 @@
-<h1>Welcome To<%= image_tag("a.png", :alt => "Logo") %></h1>
-
+<div id='welcome_logo_div'>
+  <%= image_tag"a.png", :alt => "Logo", id: 'logo' %>
+</div>
 <%= button_to "Sign Up", sign_up_path, class: 'button', method: :get, id: 'log_in_button' %>
 <br>
 <%= button_to 'Login', sign_in_path, class: "button", method: :get, id: 'log_in_button' %>
