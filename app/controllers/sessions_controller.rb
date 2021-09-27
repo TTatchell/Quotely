@@ -2,7 +2,9 @@
 
 # Controls the user log in process
 class SessionsController < ApplicationController
-  def new; end
+  def new
+    render layout: 'logged_out'
+  end
 
   def create
     user = User.find_by(email: params[:email])

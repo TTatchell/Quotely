@@ -4,6 +4,7 @@
 class RegistrationsController < ApplicationController
   def new
     @user = User.new
+    render layout: 'logged_out'
   end
 
   def create
