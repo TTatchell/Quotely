@@ -45,3 +45,26 @@
 .quote_user {
     display: flex;
 }
+
+@media only screen and (max-width:480px) {
+    .quote-header {
+        flex-direction: column;
+    }
+    .quote_content {
+        margin-bottom: 15px;
+    }
+    .quote_like_count {
+        margin-right: 10px;
+        display: flex;
+        margin-left: 0;
+    }
+    .quote_like_button {
+        margin-right: 10px;
+        display: flex;
+        margin-left: 0;
+    }
+    .quote_user {
+        color: #657786;
+        display: flex;
+    }
+}

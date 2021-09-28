@@ -9,17 +9,16 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
+    <% if Current.user %>
+      <div id='nav_bar'>
+        <%= link_to 'Home', :root%>
+        <%= link_to 'Post A Quote', :new_quote%>
+        <%= link_to 'Feed', :quotes %>
+        <%= link_to 'Your Quotes', :user_feed %>
+        <%= link_to "Logged in as: #{Current.user.first_name}", user_path(Current.user.id) %>
+      </div>
+    <% end %>
     <div id='app_wrap'>
-      <% if Current.user %>
-        <div id='navBar'>
-          <%= link_to 'Home', :root, form: {style: 'display:inline-block;'}%>
-          <%= link_to 'Post A Quote', :new_quote, form: {style: 'display:inline-block;'}%>
-          <%= link_to 'Feed', :quotes, form: {style: 'display:inline-block;'} %>
-          <%= link_to 'Your Quotes', :user_feed, form: {style: 'display:inline-block;'} %>
-          Logged in as: <%= link_to Current.user.email, user_path(Current.user.id) %>
-          <%= button_to 'Logout', logout_path, method: :delete, form: {style: 'display:inline-block;'}  %>
-        </div>
-      <% end %>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <%= yield %>

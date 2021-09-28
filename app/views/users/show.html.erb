@@ -7,4 +7,5 @@
 <%= link_to "#{@user.first_name}'s Liked Quotes", custom_user_likes_url%><br>
 <% if Current.user == @user %>
   <%= link_to 'Edit Password', :edit_password %>
+  <%= button_to 'Logout', logout_path, method: :delete, class: 'button'%>
 <% end%>
