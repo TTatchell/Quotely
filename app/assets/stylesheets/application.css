@@ -10,6 +10,11 @@ body {
     background: #e6ecf0;
 }
 
+h2 {
+    margin:40px 0px;
+
+}
+
 #logo {
     max-width: 100%;
     min-width: 250px;
@@ -68,7 +73,7 @@ a:active {
 }
 
 #nav_bar {
-    display: inline;
+    display: block;
     background-color: #3c86b8;
     overflow: hidden;
     width: 100%;
@@ -84,12 +89,32 @@ a:active {
     display: none;
 }
 
-@media screen and (max-width: 700px) {
-    #nav_bar {
-        display:list-item;
-    }
+input {
+    border: none;
+    border-bottom: 2px solid rgb(100, 100, 100);
+    background-color: #e6ecf0;
+    padding: 6px;
 }
 
+input:focus {
+    background-color: rgb(100, 100, 100);
+}
+
+textarea {
+    border: none;
+    border-bottom: 2px solid rgb(100, 100, 100);
+    background-color: #e6ecf0;
+}
+
+textarea:focus {
+    background-color: rgb(100, 100, 100);
+}
+
+@media screen and (max-width: 700px) {
+    #nav_bar {
+        display: list-item;
+    }
+}
 
 @media only screen and (max-width:480px) {
     .button {
@@ -98,5 +123,13 @@ a:active {
     body {
         padding-left: 20px;
         padding-right: 20px;
+    }
+
+    input {
+        width:80%;
+    }
+
+    textarea {
+        width: 80%;
     }
 }
