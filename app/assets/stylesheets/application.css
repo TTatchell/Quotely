@@ -67,53 +67,6 @@ a:active {
     text-decoration: none;
 }
 
-.quote_div {
-    max-width: 490px;
-    background: #fff;
-    margin: 0 auto;
-    margin-top: 50px;
-    border-radius: 3px;
-    padding: 20px;
-    border-bottom: 1px solid #e6ecf0;
-    border-top: 1px solid #e6ecf0;
-}
-
-.quote_header {
-    display: flex;
-    align-items: flex-start;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.quote_content {
-    display: flex;
-    align-items: flex-start;
-    font-size: 18px;
-    font-weight: normal;
-    margin-top: 5px;
-}
-
-.quote_like_count {
-    display: flex;
-}
-
-.like_button {
-    text-decoration: none;
-    color: white;
-    padding: 5px;
-    margin: 2px;
-    background-color: #3c86b8;
-    border: none;
-}
-
-.like_button:hover {
-    color: #3c86b8;
-    background-color: white;
-}
-
-.quote_user {
-    display: flex;
-}
 
 @media only screen and (max-width:480px) {
     .button {
