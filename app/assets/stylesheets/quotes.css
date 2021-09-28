@@ -30,16 +30,18 @@
 
 .like_button {
     text-decoration: none;
-    color: white;
+    color: #3c86b8;
     padding: 5px;
     margin: 2px;
-    background-color: #3c86b8;
-    border: none;
+    background-color: white;
+    border-color: #3c86b8;
 }
 
 .like_button:hover {
-    color: #3c86b8;
-    background-color: white;
+    color: white;
+    background-color: #3c86b8;
+    border-bottom: 2px solid white;
+
 }
 
 .quote_user {
