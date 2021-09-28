@@ -7,6 +7,7 @@
 body {
     text-align: center;
     font-family: "Arial";
+    background: #e6ecf0;
 }
 
 #logo {
@@ -37,13 +38,109 @@ body {
 
 .button:hover {
     background-position: right center;
-    /* change the direction of the change here */
     color: #fff;
     text-decoration: none;
+}
+
+a:link {
+    text-decoration: none;
+    color: #181818;
+    padding: 5px;
+    margin: 2px;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #181818;
+    padding: 5px;
+    margin: 2px;
+}
+
+a:hover {
+    text-decoration: none;
+    background: #3c86b8;
+    color: white;
+    padding: 5px
+}
+
+a:active {
+    text-decoration: none;
+}
+
+.quote_div {
+    max-width: 490px;
+    background: #fff;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 3px;
+    padding: 20px;
+    border-bottom: 1px solid #e6ecf0;
+    border-top: 1px solid #e6ecf0;
+}
+
+.quote_header {
+    display: flex;
+    align-items: flex-start;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.quote_content {
+    display: flex;
+    align-items: flex-start;
+    font-size: 18px;
+    font-weight: normal;
+    margin-top: 5px;
+}
+
+.quote_like_count {
+    display: flex;
+}
+
+.like_button {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    margin: 2px;
+    background-color: #3c86b8;
+    border: none;
+}
+
+.like_button:hover {
+    color: #3c86b8;
+    background-color: white;
+}
+
+.quote_user {
+    display: flex;
 }
 
 @media only screen and (max-width:480px) {
     .button {
         width: 80%;
+    }
+    body {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .quote-header {
+        flex-direction: column;
+    }
+    .quote_content {
+        margin-bottom: 15px;
+    }
+    .quote_like_count {
+        margin-right: 10px;
+        display: flex;
+        margin-left: 0;
+    }
+    .quote_like_button {
+        margin-right: 10px;
+        display: flex;
+        margin-left: 0;
+    }
+    .quote_user {
+        color: #657786;
+        display: flex;
     }
 }

@@ -1,22 +1,28 @@
 <% if @quotes.empty? %>
-  <h3>Hmm, doesn't seem like there's anything here yet</h3>  
+  <h3>Hmm, doesn't seem like there's anything here yet</h3>
 <% else %>
   <% @quotes.each do |quote| %>
-    <div>
-      <%= link_to quote_path(quote) do %>
-        <h4><%= quote.author %> once said:</h4>
-        <h4><i><%= quote.content %></i></h4>
-      <% end %>
-      <%= link_to quote_likes_path(quote) do%>
-        <p><%= quote.likes.count %> <%= (quote.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-      <% end %>
-      <% pre_like = quote.likes.find { |like| like.user_id == Current.user.id} %>
-      <% if pre_like %>
-        <%= button_to 'Unlike', quote_like_path(quote, pre_like), method: :delete %>
-      <% else %>
-        <%= button_to 'Like', quote_likes_path(quote), method: :post %>
-      <% end %>
-      <p>Posted by: <%= link_to quote.user.first_name, user_path(quote.user.id) %></p>
+    <div class='quote_div'>
+      <div class='quote_header'>
+        <p><%= quote.author %>:</p>
+      </div>
+      <div class='quote_content'>
+        <p><%= quote.content %></p>
+      </div>
+      <div class='quote_like_count'>
+        <%= link_to quote_likes_path(quote) do%>
+          <%= quote.likes.count %> <%= (quote.likes.count) == 1 ? 'Like' : 'Likes'%>
+        <% end %>
+        <% pre_like = quote.likes.find { |like| like.user_id == Current.user.id} %>
+        <% if pre_like %>
+          <%= button_to "UNLIKE", quote_like_path(quote, pre_like), method: :delete, class: 'like_button' %>
+        <% else %>
+          <%= button_to 'LIKE', quote_likes_path(quote), method: :post, class: 'like_button' %>
+        <% end %>
+      </div>
+      <div class = 'quote_user'>
+        <p>Owner: <%= link_to quote.user.first_name, user_path(quote.user.id) %></p>
+      </div>
     </div>
   <% end %>
 <% end %>
