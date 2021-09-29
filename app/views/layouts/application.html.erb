@@ -19,7 +19,9 @@
       </div>
     <% end %>
     <div id='app_wrap'>
-      <p class="notice"><%= notice %></p>
+      <% unless notice.nil? %>
+        <p class="notice"><%= notice %></p>
+      <% end %>
       <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>

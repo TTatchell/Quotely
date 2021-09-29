@@ -11,7 +11,9 @@
   <body>
     <div id='app_wrap'>
       <%= image_tag"a.png", :alt => "Logo", id: 'logo' %>
-      <p class="notice"><%= notice %></p>
+      <% unless notice.nil? %>
+        <p class="notice"><%= notice %></p>
+      <% end %>
       <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>

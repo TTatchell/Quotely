@@ -1,3 +1,8 @@
+* {
+    margin:0;
+    padding:0;
+}
+
 #app_wrap {
     max-width: 800px;
     margin: 0 auto;
@@ -27,6 +32,7 @@ h2 {
     height: 50px;
     display: inline-block;
     overflow: hidden;
+    margin:20px;
 }
 
 .button {
@@ -76,6 +82,17 @@ a:hover {
 
 a:active {
     text-decoration: none;
+}
+
+.notice {
+    max-width: 490px;
+    background-color: #fff;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 3px;
+    padding: 20px;
+    border-bottom: 1px solid #e6ecf0;
+    border-top: 1px solid #e6ecf0;
 }
 
 #nav_bar {
