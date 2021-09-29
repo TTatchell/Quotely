@@ -1,5 +1,8 @@
-<h1>Welcome <%= Current.user.first_name %>, To Quotely</h1><br>
-<h2>Things you can do:</h2><br>
-<%= link_to 'Post A Quote', :new_quote %><br><br>
-<%= link_to 'Check Out The Quotes Feed', :quotes %><br><br>
+<%= image_tag"cropped_icon.png", :alt => "Icon", id: 'icon' %>
+<h1>Welcome <%= Current.user.first_name %>, To Quotely</h1>
+<h2>Things you can do:</h2>
+<%= link_to 'Post A Quote', :new_quote %><br>
+<br>
+<%= link_to 'Check Out The Quotes Feed', :quotes %><br>
+<br>
 <%= link_to 'Have A Look At Your Profile', user_path(Current.user.id) %>
