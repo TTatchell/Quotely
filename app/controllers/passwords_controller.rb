@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Handles password changes
-class PasswordController < ApplicationController
+class PasswordsController < ApplicationController
   before_action :require_user_logged_in!
   def edit; end
 
