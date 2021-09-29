@@ -1,14 +1,32 @@
-<h2><%= @quote.author%></h2>
-<h2><%= @quote.content%></h2>
-<p><%= @quote.likes.count %> <%= (@quote.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-<% pre_like = @quote.likes.find { |like| like.user_id == Current.user.id} %>
-<% if pre_like %>
-  <%= button_to 'Unlike', quote_like_path(@quote, pre_like), method: :delete %>
+<%= stylesheet_link_tag "quotes.css" %>
+<% if @quote.blank? %>
+  <h3>Hmm, doesn't seem like there's anything here yet</h3>
 <% else %>
-  <%= button_to 'Like', quote_likes_path(@quote), method: :post %>
-<% end %>
-<br>
-<% if Current.user == @quote.user %>
-  <%= link_to "Edit", edit_quote_path(@quote) %>
-  <%= link_to 'Delete', quote_path(@quote), method: :delete, data: { confirm: 'Are you sure? This can\'t be undone!' } %>
+  <div class='quote_div'>
+    <div class='quote_header'>
+      <p><%= @quote.author %>:</p>
+    </div>
+    <div class='@quote_content'>
+      <p><%=  @quote.content %></p>
+    </div>
+    <div class='quote_like_count'>
+      <%= link_to quote_likes_path(@quote) do%>
+        <%= @quote.likes.count %> <%= (@quote.likes.count) == 1 ? 'Like' : 'Likes'%>
+      <% end %>
+      <% pre_like = @quote.likes.find { |like| like.user_id == Current.user.id} %>
+      <% if pre_like %>
+        <%= button_to "UNLIKE", quote_like_path(@quote, pre_like), method: :delete, class: 'like_button' %>
+      <% else %>
+        <%= button_to 'LIKE', quote_likes_path(@quote), method: :post, class: 'like_button' %>
+      <% end %>
+    </div>
+    <div class = 'quote_user'>
+      <% if Current.user == @quote.user %>
+        <%= link_to "Edit", edit_quote_path(@quote) %>
+        <%= link_to 'Delete', quote_path(@quote), method: :delete, data: { confirm: 'Are you sure? This can\'t be undone!' } %>
+      <% else %>
+        <p>Owner: <%= link_to @quote.user.first_name, user_path(@quote.user.id) %></p>
+      <% end %>
+    </div>
+  </div>
 <% end %>

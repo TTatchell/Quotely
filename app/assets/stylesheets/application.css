@@ -2,7 +2,8 @@
     margin: 0;
     padding: 0;
     max-width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 h4 {
@@ -85,7 +86,7 @@ a:visited {
 
 a:hover {
     text-decoration: none;
-    background: #3c86b8;
+    background: #00b7ff;
     color: white;
     padding: 5px
 }
