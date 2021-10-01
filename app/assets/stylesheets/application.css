@@ -1,9 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    max-width: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
+    max-width:-webkit-fill-available;
 }
 
 h4 {
