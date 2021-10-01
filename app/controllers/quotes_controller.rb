@@ -11,7 +11,6 @@ class QuotesController < ApplicationController
   def create
     @quote = Quote.new(quote_params)
     @quote.user_id = session[:user_id]
-    @quote.published = true
     if @quote.save
       redirect_to root_path, notice: 'Posted Quote!'
     else
