@@ -12,4 +12,13 @@ class User < ApplicationRecord
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def self.create_from_omniauth(auth, auth_info)
+    User.find_or_create_by(uid: auth['uid'], provider: auth['provider']) do |u|
+      u.first_name = auth_info['first_name']
+      u.last_name = auth_info['last_name']
+      u.email = auth_info['email']
+      u.password = SecureRandom.hex(16)
+    end
+  end
 end

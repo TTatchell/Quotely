@@ -22,4 +22,10 @@ Rails.application.routes.draw do
   post 'password/reset', to: 'password_resets#create'
   get 'password/reset/edit', to: 'password_resets#edit'
   patch 'password/reset/edit', to: 'password_resets#update'
+
+  # For google only
+  # get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
+
+  # For all providers
+  get '/auth/:provider/callback', to: 'sessions#omniauth'
 end

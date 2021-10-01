@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,36 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_210_924_112_500) do
-  create_table 'likes', force: :cascade do |t|
-    t.integer 'user_id', null: false
-    t.integer 'quote_id', null: false
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.index ['quote_id'], name: 'index_likes_on_quote_id'
-    t.index ['user_id'], name: 'index_likes_on_user_id'
+ActiveRecord::Schema.define(version: 2021_10_01_062929) do
+
+  create_table "authors", force: :cascade do |t|
+    t.string "name"
+    t.integer "quote_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["quote_id"], name: "index_authors_on_quote_id"
   end
 
-  create_table 'quotes', force: :cascade do |t|
-    t.string 'content'
-    t.integer 'user_id', null: false
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.string 'author'
-    t.boolean 'published'
-    t.index ['user_id'], name: 'index_quotes_on_user_id'
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "quote_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["quote_id"], name: "index_likes_on_quote_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
-  create_table 'users', force: :cascade do |t|
-    t.string 'first_name'
-    t.string 'last_name'
-    t.string 'email', null: false
-    t.string 'password_digest'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
+  create_table "quotes", force: :cascade do |t|
+    t.string "content"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "author"
+    t.boolean "published"
+    t.index ["user_id"], name: "index_quotes_on_user_id"
   end
 
-  add_foreign_key 'likes', 'quotes'
-  add_foreign_key 'likes', 'users'
-  add_foreign_key 'quotes', 'users'
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email", null: false
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "username"
+    t.string "uid"
+    t.string "provider"
+  end
+
+  add_foreign_key "authors", "quotes"
+  add_foreign_key "likes", "quotes"
+  add_foreign_key "likes", "users"
+  add_foreign_key "quotes", "users"
 end
