@@ -3,6 +3,7 @@
     background: #fff;
     margin: 0 auto;
     margin-top: 50px;
+    margin-bottom: 50px;
     border-radius: 3px;
     padding: 20px;
     border-bottom: 1px solid #e6ecf0;
@@ -16,12 +17,13 @@
     font-weight: bold;
 }
 
-.quote_content {
+.quote_content p {
     display: flex;
     align-items: flex-start;
     font-size: 18px;
     font-weight: normal;
     margin-top: 5px;
+    word-break: break-all;
 }
 
 .quote_like_count {
@@ -41,7 +43,6 @@
     color: white;
     background-color: #00b7ff;
     border-bottom: 2px solid white;
-
 }
 
 .quote_user {
