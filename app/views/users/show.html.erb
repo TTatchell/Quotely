@@ -11,6 +11,7 @@
   </div>
   <p><%= link_to "#{@user.first_name}'s Quotes", custom_user_quotes_url %></p>
   <p><%= link_to "#{@user.first_name}'s Liked Quotes", custom_user_likes_url%></p>
+  <p><%= link_to "#{@user.first_name}'s Favourite Authors", custom_liked_authors_url %></p>
   <% if Current.user == @user %>
     <p><%= link_to 'Edit Password', :edit_password %></p>
     <%= button_to 'Logout', logout_path, method: :delete, class: 'button'%>
