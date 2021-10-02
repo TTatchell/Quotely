@@ -4,6 +4,6 @@ class Quote < ApplicationRecord
   belongs_to :user
   has_many :likes, dependent: :destroy
 
-  validates :content, length: { maximum: 280 }
+  validates :content, length: { minimum: 10, maximum: 1000 }
   validates :author, presence: true
 end
