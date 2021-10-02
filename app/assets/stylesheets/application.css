@@ -150,6 +150,10 @@ textarea:focus {
     border: red 2px solid;
 }
 
+.field_with_errors textarea{
+    border: red 2px solid;
+}
+
 .error_div {
     color:red
 }
