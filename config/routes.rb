@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
   get 'users/:id/user_quotes' => 'users#user_quotes', :as => :custom_user_quotes
   get 'users/:id/user_likes' => 'users#user_likes', :as => :custom_user_likes
+  get 'users/:id/liked_authors' => 'users#liked_authors'
 
   resources :users, only: :show
   get 'user_feed', to: 'quotes#user_feed'

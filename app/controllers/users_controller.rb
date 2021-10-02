@@ -15,4 +15,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @quotes = @user.likes.collect(&:quote)
   end
+
+  def liked_authors
+    @user = User.find(params[:id])
+    @authors = @user.likes.collect(&:quote).collect(&:author)
+  end
 end
