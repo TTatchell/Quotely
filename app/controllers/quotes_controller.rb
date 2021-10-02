@@ -3,6 +3,7 @@
 # Logic behind quotes (CRUD)
 class QuotesController < ApplicationController
   before_action :require_user_logged_in!
+
   def new
     @quote = Quote.new
     @maximum_length = Quote.validators_on(:content).first.options[:maximum]
@@ -35,7 +36,7 @@ class QuotesController < ApplicationController
   end
 
   def index
-    @quotes = Quote.all.select { |quote| quote.published == true }
+    @quotes = Quote.published
   end
 
   def show

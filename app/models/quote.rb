@@ -6,4 +6,6 @@ class Quote < ApplicationRecord
 
   validates :content, length: { minimum: 10, maximum: 1000 }
   validates :author, presence: true
+
+  scope :published, -> { where(published: true) }
 end
