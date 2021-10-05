@@ -55,7 +55,7 @@ class QuotesController < ApplicationController
   private
 
   def quote_params
-    params.require(:quote).permit(:id, :content, :author, :user, :published)
+    params.require(:quote).permit(:id, :content, :author, :user, :published, category_ids: [])
   end
 
   def does_user_own_this?(quote)
